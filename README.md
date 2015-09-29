@@ -22,5 +22,4 @@ Example of the format -
 The Synonym is the locus_tag; The PID is the protein ID; This can be mapped again to the COG database if needed.
 The file outputs (1) a dictionary of COG: [locus_tag1, locus_tag2, ...] and (2) a dictionary of (COG1,COG2): Count
 
-2. graphCOG.py: This python file parses the COGpair dictionary i.e. (COG1,COG2):Count and exports a csv file in the format 
-COG-A, COG-B, # (COGA-COGB), # (COGA-COGB)/#(COG-A), #(COG-A members), #(COG-B members)
+2. graphCOG.py: This python file parses the COGpair dictionary and calculates the FGOC and dirFGOC scores. It makes appropriately formatted tab delimited file for use in cytoscape

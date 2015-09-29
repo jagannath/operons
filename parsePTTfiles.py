@@ -84,10 +84,12 @@ class PTTfile:
             cogPair = self.getCOGpair(geneA,geneB)
             cogPair_count_dict[cogPair]+=1
             cog_locusTagList_dict[geneA[-1]].append(geneA[2])
+	    locus_cog_dict[geneA[2]] = geneA[7]
     
 # Defining dictionary
 cogPair_count_dict = defaultdict(int)
 cog_locusTagList_dict = defaultdict(list)
+locus_cog_dict = dict()
 
 sourceDir = '/home/jaggu/research/allGenomePttFiles'
 pklPath = '/home/jaggu/research/projectFiles/operons/pklFiles'
@@ -114,6 +116,7 @@ def main(sourceDir):
         genome.populateDict()
     savePkl(cogPair_count_dict,'cogPair_count.dict.pkl')
     savePkl(cog_locusTagList_dict,'cog_locusTag.dict.pkl')
+    savePkl(locus_cog_dict,'locus_cog.dict.pkl')
         
 def test_case():
     orgName = 'Bacillus_subtilis_168_uid57675'
